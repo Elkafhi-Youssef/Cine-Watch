@@ -88,38 +88,6 @@ body {
      object-fit: cover;
 }
 
-.toggle {
-  width: 40px;
-  height: 20px;
-  background-color: white;
-  border-radius: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  position: relative;
-}
-
-.toggle-icon {
-  color: goldenrod;
-}
-
-.toggle-ball {
-  width: 18px;
-  height: 18px;
-  background-color: black;
-  position: absolute;
-  right: 1px;
-  border-radius: 50%;
-  cursor: pointer;
-  -webkit-transition: 1s ease all;
-  transition: 1s ease all;
-}
-
 .container {
   background-color: #151515;
   min-height: calc(99vh - 50px);
@@ -262,13 +230,17 @@ input {
 
 .send_comment {
   padding: 10px;
-  background-color: #bf0000;
-  color: white;
+  color: #1b1919;
   border-radius: 10px;
   outline: none;
-  border: none;
+  border: 2px solid red;
   cursor: pointer;
   margin-right: -4px;
+}
+
+.send_comment:hover {
+  background-color: red;
+  color: white;
 }
 
 .movie-list-item-butto {

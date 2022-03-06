@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="<?= URLROOT.DS.'public/css/home.css';?>" >
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
@@ -23,34 +22,18 @@
                     <li class="menu-list-item active"><a href="">Home</a></li>
                     <li class="menu-list-item"><a href="">Movies</a></li>
                     <li class="menu-list-item"><a href="">Series</a></li>
-                    <li class="menu-list-item"><a href="">Popular</a></li>
-                    <li class="menu-list-item"><a href="">Trends</a></li>
+                    
                 </ul>
             </div>
             <div class="profile-container">
-                <!-- <img class="profile-picture" src="img/profile.jpg" alt=""> -->
+                
                 <ul class="register">
                     <li class="register__item singin "><a href="">Sing in</a></li>
                     <li class="register__item singup"><a href="">Sing up</a></li>
                 </ul>
-                
-                <!-- <div class="toggle">
-                    <i class="fas fa-moon toggle-icon"></i>
-                    <i class="fas fa-sun toggle-icon"></i>
-                    <div class="toggle-ball"></div>
-                </div> -->
             </div>
         </div>
     </div>
-    <!-- <div class="sidebar">
-        <i class="left-menu-icon fas fa-search"></i>
-        <i class="left-menu-icon fas fa-home"></i>
-        <i class="left-menu-icon fas fa-users"></i>
-        <i class="left-menu-icon fas fa-bookmark"></i>
-        <i class="left-menu-icon fas fa-tv"></i>
-        <i class="left-menu-icon fas fa-hourglass-start"></i>
-        <i class="left-menu-icon fas fa-shopping-cart"></i>
-    </div> -->
     <div class="container">
         <div class="content-container">
             <div class="featured-content"
@@ -62,7 +45,7 @@
                 <button class="featured-button">WATCH</button>
             </div>
             <div class="movie-list-container">
-                <h1 class="movie-list-title">NEW RELEASES</h1>
+                <h1 class="movie-list-title">Movies</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
                         <div class="movie-list-item">
@@ -115,10 +98,9 @@
                             <button class="movie-list-item-button">Watch</button>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-right arrow"></i>
                 </div>
             </div>
-            <div class="movie-list-container">
+            <!-- <div class="movie-list-container">
                 <h1 class="movie-list-title">NEW RELEASES</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
@@ -172,19 +154,18 @@
                             <button class="movie-list-item-button">Watch</button>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-right arrow"></i>
                 </div>
-            </div>
-            <div class="featured-content"
+            </div> -->
+            <!-- <div class="featured-content"
                 style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('<?= URLROOT."/public/img/f-2.jpg";?>');">
                 <img class="featured-title" src="<?= URLROOT."/public/img/f-2.jpg";?>" alt="">
                 <p class="featured-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo dolor
                     deserunt nam assumenda ipsa eligendi dolore, ipsum id fugiat quo enim impedit, laboriosam omnis
                     minima voluptatibus incidunt. Accusamus, provident.</p>
                 <button class="featured-button">WATCH</button>
-            </div>
+            </div> -->
             <div class="movie-list-container">
-                <h1 class="movie-list-title">NEW RELEASES</h1>
+                <h1 class="movie-list-title">Series</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
                         <div class="movie-list-item">
@@ -237,10 +218,9 @@
                             <button class="movie-list-item-button">Watch</button>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-right arrow"></i>
                 </div>
             </div>
-            <div class="movie-list-container">
+            <!-- <div class="movie-list-container">
                 <h1 class="movie-list-title">NEW RELEASES1</h1>
                 <div class="movie-list-wrapper">
                     <div class="movie-list">
@@ -294,9 +274,8 @@
                             <button class="movie-list-item-button">Watch</button>
                         </div>
                     </div>
-                    <i class="fas fa-chevron-right arrow"></i>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="container_form">
@@ -305,13 +284,13 @@
             <img src="<?= URLROOT."/public/img/x.svg";?>" alt="">
             </div>
             <h2>Sing in</h2>
-            <form>
+            <form action="<?= URLROOT."/AllPosts/login";?>" method="POST">
                 <div class="user-box">
-                    <input type="text" name="" required="">
-                    <label>Username</label>
+                    <input type="text" name="email" required="">
+                    <label>Email</label>
                  </div>
                 <div class="user-box">
-                    <input type="password" name="" required="">
+                    <input type="password" name="password" required="">
                     <label>Password</label>
                 </div>
            <a href="#">

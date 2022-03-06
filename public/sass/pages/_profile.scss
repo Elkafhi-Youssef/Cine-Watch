@@ -15,7 +15,6 @@
     top: 0;
     z-index: 999;
   }
-  
   .navbar-container {
     display: flex;
     align-items: center;
@@ -24,11 +23,9 @@
     color: white;
     font-family: "Sen", sans-serif;
   }
-  
   .logo-container {
     flex: 1;
   }
-  
   .logo {
     font-size: 22px;
     color: #4dbf00;
@@ -203,7 +200,7 @@
     bottom: 20px;
     left: 10px;
   }
-  .btn2{
+  .btn2{ 
     position: absolute;
     bottom: 20px;
     left: 80px;
@@ -214,15 +211,7 @@
     left: 160px;
   }
   
-  .arrow {
-    font-size: 120px;
-    position: absolute;
-    top: 90px;
-    right: 0;
-    color: lightgray;
-    opacity: 0.5;
-    cursor: pointer;
-  }
+  
   
   .container.active {
     background-color: white;
@@ -234,7 +223,6 @@
   
   .navbar-container.active {
     background-color: white;
-  
     color: black;
   }
   

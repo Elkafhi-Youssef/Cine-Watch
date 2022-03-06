@@ -67,31 +67,8 @@
     object-fit: cover;
   }
   
-  .toggle {
-    width: 40px;
-    height: 20px;
-    background-color: white;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
-  }
-  
-  .toggle-icon {
-    color: goldenrod;
-  }
-  
-  .toggle-ball {
-    width: 18px;
-    height: 18px;
-    background-color: black;
-    position: absolute;
-    right: 1px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 1s ease all;
-  }
+ 
+
   .container {
     background-color: #151515;
     min-height: calc(99vh - 50px);
@@ -198,13 +175,17 @@ input{
 }
 .send_comment{
   padding: 10px;
-  background-color: #bf0000;
-  color: white;
+  color: rgb(27, 25, 25);
   border-radius: 10px;
   outline: none;
-  border: none;
+  border: 2px solid red;
   cursor: pointer;
   margin-right: -4px;
+}
+.send_comment:hover{
+  background-color: red;
+  color: white;
+
 }
  .movie-list-item-butto {
   padding: 10px;

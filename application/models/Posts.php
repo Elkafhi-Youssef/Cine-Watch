@@ -15,7 +15,7 @@
         // }
 
         public function addPost($data ){
-            $this->db->insert("post",["title_film", "countryFilm", "descFilm", "genreFilm", "categoryFilm", "image","id_user"],$data);
+            $this->db->insert("post",["title_film", "countryFilm", "descFilm", "genreFilm", "categoryFilm", "imageFilm","id_user"],$data);
         }
 
         public function updatePost($valuses,$id){
@@ -37,6 +37,7 @@
             return  $this->db->getRow(); 
             
         }
+      
         public function getCommets($id){
             $this->db->prepareQuery("SELECT user.Fullname,post.id_post,comment.id_comment,comment.descComment,comment.dateComment FROM user
             INNER JOIN comment   ON user.id_user = comment.id_user JOIN post on comment.id_post = post.id_post where post.id_post = ? ");

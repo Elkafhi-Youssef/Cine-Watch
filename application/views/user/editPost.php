@@ -1,7 +1,9 @@
-<div class="container_form">
-        <div class="login-box">
+<?php require_once VIEWS_PATH.DS.'views.inc'.DS.'user.nav.php';?>
+
+<div style="display: block;" class="container_form">
+        <div style="margin-top: 2rem;" class="login-box">
             <div class="close">
-            <img src="<?= URLROOT."/public/img/x.svg";?>" alt="">
+            <!-- <img src="<?= URLROOT."/public/img/x.svg";?>" alt=""> -->
             </div>
             <h2>Add post</h2>
             <form method="POST" action="<?= URLROOT.'/Post/updatePost/'.$data['id_post'];?>" enctype="multipart/form-data">

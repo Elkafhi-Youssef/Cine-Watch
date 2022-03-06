@@ -1,7 +1,7 @@
 
 
 <?php
-// session_start();
+session_start();
   // Define the directory deparator
 const DS = DIRECTORY_SEPARATOR;
   require_once './config/config.php';

@@ -12,7 +12,7 @@
         public function index(){
             $this->loadView('user/post',[]);
         }
-        public function addPost($id = 1)
+        public function addPost()
         {
             if ($_SERVER['REQUEST_METHOD'] == 'POST'  )
              {
@@ -35,10 +35,10 @@
                 
                 $dt = $this->modelInstance->addPost([$data['title_film'] ,$data['country'],$data['description'],$data['genre'],$data['category'],$data['image'],$data['id_user']]);
                 if ($dt) {
-                    $this->redirect(URLROOT .'/profileC/getAllPostsUser');
+                    $this->redirect(URLROOT .'/profileC/getAllPostsUser/'.$_SESSION['user_id']);
                     echo "i'm here";
                 }else {
-                        $this->redirect(URLROOT .'/profileC/getAllPostsUser');
+                        $this->redirect(URLROOT .'/profileC/getAllPostsUser/'.$_SESSION['user_id']);
                     }
             } 
     }       
@@ -62,7 +62,7 @@
             // print_r($data[1]);
             $this->loadView('user/post',$data);
         }
-        public function updatePost($id  )
+        public function updatePost($id)
         {
             if ($_SERVER['REQUEST_METHOD'] == 'POST'  )
              {

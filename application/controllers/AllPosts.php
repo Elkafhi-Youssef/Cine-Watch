@@ -1,77 +1,75 @@
 <?php
 
 
-    class AllPosts extends Controller{
+class AllPosts extends Controller
+{
 
-        public function __construct(){
-            
-            $this->setModelInstance('users');
-        }
-        public function index(){
-            $this->loadView('user/allPosts',[]);
-        }
-      
-        public function getPatient($id){
-           
-            $data = $this->modelInstance->getpatient($id);
-            
-            $this->loadView('user'.DS.'editPPatient',$data);
-            // $this->loadView('test',$data);
-        }
+    public function __construct()
+    {
 
-      
-
-        public function patientProfile($id){
-            $dat = $this->modelInstance->getpatient($id);
-            $this->loadView('user/profilePatient',$dat );
-           
-         }
-         public function modifyPost($id){
-            // && isset($_POST['submit'])
-            if ($_SERVER['REQUEST_METHOD'] == 'POST'  ) {
-                $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
-                $data = [
-                    'fn_Patient' => $_POST['fullname'],
-                    'email_patient' => $_POST['gmail'],
-                    'passwod' => $_POST['password'],
-                    'date_birth' => $_POST['date'],
-                    'type_sickness' => $_POST['sickness'],
-                    'id_patient'=>$id
-                ];
-                print_r($data);
-               
-                
-                $dt = $this->modelInstance->updatePatient($data['fn_Patient'] ,$data['email_patient'],$data['passwod'],$data['date_birth'],$data['type_sickness'],$data['id_patient']);
-                
-                    if ($dt) {
-                       
-                        $this->redirect(URLROOT . '/User/patientProfile/'.$data['id_patient']);
-                    } else {
-                  
-                        $this->redirect(URLROOT . '/User/getpatient/'.$data['id_patient']);
-                     }
-        }else{
-            $this->loadView();
-        }
+        $this->setModelInstance('users');
+        // $this->setModelInstance('posts');
     }
-        public function modifyDoctor($id){
-            //     // && isset($_POST['submit'])
-                if ($_SERVER['REQUEST_METHOD'] == 'POST'  ) {
-                    $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+    public function index()
+    {
+    $data1 = $this->modelInstance->getAllMovies();
+    // print_r($data1);
+    // die();
+    $data2 = $this->modelInstance->getAllSerials();
+         $data = [$data1,$data2];
+        $this->loadView('user/allPosts', $data);
+    }
+
+    public function login()
+    {
+        if (($_SERVER['REQUEST_METHOD'] == 'POST')) {
+            
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            //assciative arrays
+            $data = [
+                'email' => $_POST['email'],
+                'password' => $_POST['password'],
+                'error_email' => '',
+                'error_password' => ''
+            ];
+            
+            
+            if (empty($data['email'])) {
+                $data['error_email'] = 'Please fill your email';
+            }
+            if (empty($data['password'])) {
+                $data['error_email'] = 'Please fill your password';
+            }
+            if (empty($data['email']) && empty($data['error_password']) && empty($data['user'])) {
+                $password_err = 'Please fill your eamil and password and user type';
+            }
+            
+
+            if (empty($email_err) && empty($password_err)) {
+
+                // $dt = call function here
+                $dt = $this->modelInstance->login($data['email'], $data['password']);
+                if ($dt) {
+
+                    $_SESSION['email'] = $data['email'];
+                    $_SESSION['user_id'] = $dt['id_user'];
+                    $_SESSION['fullname'] = $dt['Fullname'];
+                    print_r($_SESSION);
+                    
+                    $this->redirect(URLROOT . '/AllPosts');
+                } else {
+                    //password incorrect
                     $data = [
-                        'fn_doctor' => $_POST['fullname'],
-                        'email_doctor' => $_POST['gmail'],
-                        'passwod' => $_POST['password'],
-                        'date_birth' => $_POST['date'],
-                        'type_Compence' => $_POST['Compence'],
-                        'id_doctor'=>$id
+
+                        'email_error' => 'password or email incorrect',
+                        'password_error' => 'password or email incorrect',
                     ];
-                   
                     print_r($data);
-                    $dt = $this->modelInstance->updateDoctor($data['fn_doctor'] ,$data['email_doctor'],$data['passwod'],$data['date_birth'],$data['type_Compence'],$data['id_doctor']);
-                    echo "i'm here";
-                        if ($dt) $this->redirect(URLROOT . '/User/doctorProfile/'.$data['id_doctor']);
-                         else $this->redirect(URLROOT . '/User/getDoctor/'.$data['id_doctor']);
+                    $this->loadView('user/login',$data);
                 }
+            }
+        } else {
+            $this->loadView('user/login',[]);
+        }
     }
 }

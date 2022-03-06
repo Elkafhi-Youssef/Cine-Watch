@@ -42,7 +42,7 @@
       <div class="container">
         <div class="content-container">
             <div class="info__user"
-                style="background: linear-gradient(to bottom, rgba(19, 16, 16, 0), #151515), url('<?= URLROOT."/public/upload/".$data[0]['imageFilm'];?>');">
+                style="background: linear-gradient(to bottom, rgba(19, 16, 16, 0), #151515), url('<?= URLROOT."/public/upload/".$data[0]['imageFilm'];?>') ;background-size: 100%;">
 
                 <div class="info_film">
                    <img class="img_film" src="<?= URLROOT.DS.'public/upload/'.$data[0]['imageFilm'];?>" alt="">
@@ -76,7 +76,7 @@
                         <form class="form_comment" method="post" action="<?= URLROOT.'/Post/addComment/'.$data[0]['id_post'];?>">
                             <div class="input_comment">
                                 <input type="text" name="comment" id="">
-                                <input style="display:none;" type="number" value="1" name="id_user" id="">
+                                <input style="display:none; background-color: #bf0000;" type="number" value="<?=$_SESSION['user_id'];?>" name="id_user" id="">
                                 <!-- <input type="number" value="3" name="id_post" id=""> -->
                                 <button class="send_comment" type="submit">send</button>
                             </div>

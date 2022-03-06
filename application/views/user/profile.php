@@ -41,48 +41,7 @@
                                 </div>
                         </div>
                         <?php } ?>
-                        <!-- <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="<?= URLROOT.DS.'public/img/2.jpeg';?>" alt="">
-                            <span class="movie-list-item-title">Star Wars</span>
-                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.</p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="<?= URLROOT.DS.'public/img/3.jpg';?>" alt="">
-                            <span class="movie-list-item-title">Storm</span>
-                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.</p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="<?= URLROOT.DS.'public/img/4.jpg';?>" alt="">
-                            <span class="movie-list-item-title">1917</span>
-                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.</p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="<?= URLROOT.DS.'public/img/5.jpg';?>" alt="">
-                            <span class="movie-list-item-title">Avengers</span>
-                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.</p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="<?= URLROOT.DS.'public/img/6.jpg';?>" alt="">
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.</p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div>
-                        <div class="movie-list-item">
-                            <img class="movie-list-item-img" src="<?= URLROOT.DS.'public/img/7.jpg';?>" alt="">
-                            <span class="movie-list-item-title">Her</span>
-                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
-                                hic fugit similique accusantium.</p>
-                            <button class="movie-list-item-button">Watch</button>
-                        </div> -->
+                       
                     </div>
                     
                 </div>
@@ -90,8 +49,9 @@
 
         </div>
 </div>
-    <div class="container_form">
-        <div class="login-box">
+<!-- form for add post  -->
+    <div  class="container_form">
+        <div style="margin-top:2rem;" class="login-box">
             <div class="close">
             <img src="<?= URLROOT."/public/img/x.svg";?>" alt="">
             </div>
@@ -106,7 +66,7 @@
                     <label>Country </label>
                  </div>
                 <div style="display:none;" class="user-box">
-                    <input type="text" value="1" name="id_user" required="">
+                    <input type="text" value="<?=$_SESSION['user_id'];?>" name="id_user" required="">
                     <label>id_user</label>
                 </div>
                 <div  class="user-box">
@@ -141,7 +101,7 @@
                 </a>
          </form>
       </div>
-</div>
+    </div>
 <script src="<?= URLROOT.DS.'public/js/app.js';?>"></script>
 <script>
     const closeAddform = document.querySelector(".close");

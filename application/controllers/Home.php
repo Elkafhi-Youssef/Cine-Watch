@@ -17,7 +17,17 @@ class Home extends Controller{
     // index : default method 
     public function index(){
         
-        // $this->loadView('home',[]);
+      
+        $this->loadView('home',[]);
+    }
+
+    public function logout(){
+        
+       
+        unset($_SESSION["user_id"]);
+        unset($_SESSION["email"]);
+        unset($_SESSION["fullname"]);
+        
         $this->loadView('home',[]);
     }
 
