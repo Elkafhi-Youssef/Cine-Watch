@@ -28,15 +28,5 @@
             
         }
         
-        public function updatePatient($values0,$values1,$values2,$values3,$values4,$id){
-            $this->db->prepareQuery("UPDATE `patient` SET `fn_patient` = ?, `email_patient` = ?, `passwod` = ?, `date_birth` = ? ,`type_sickness`= ? WHERE `patient`.`id_patient` = ?");
-           $info = $this->db->execute([$values0,$values1,$values2,$values3,$values4,$id]);
-            if ($info){
-                return true;
-            }else{
-                return false;
-            }
-            
-        }
-
+       
     }

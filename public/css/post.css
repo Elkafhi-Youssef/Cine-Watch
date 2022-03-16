@@ -20,9 +20,18 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   padding: 0 50px;
   height: 100%;
   color: white;
@@ -98,25 +107,42 @@ body {
   /* margin-left: 50px; */
 }
 
-.info__user {
+.info__userPost {
   padding: 3rem 0  0 3rem;
-  height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: auto;
 }
 
 .comment_info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  /* flex-direction: column; */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   width: auto;
   margin-left: 2rem;
   width: 30rem;
@@ -258,6 +284,24 @@ input {
 @media only screen and (max-width: 940px) {
   .menu-container {
     display: none;
+  }
+  .profile-text-container {
+    margin: 0 0;
+  }
+  .info__userPost {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .info__userPost .info_film {
+    width: 100%;
+  }
+  .info__userPost .info_film .information .description {
+    margin-left: 1rem;
+  }
+  .info__userPost .comment_info {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=post.css.map */

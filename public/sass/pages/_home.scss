@@ -28,20 +28,21 @@ body {
     padding: 0 50px;
     height: 100%;
     color: white;
+    justify-content: space-between;
     font-family: "Sen", sans-serif;
     
     .logo-container {
-      flex: 1;
-      width: 5rem;
+      
+      width: rem;
       
       .logo {
-        font-size: 22px;
+        font-size: 16px;
         color: red;
       }
     }
     
     .menu-container {
-      flex: 6;
+      
       
       .menu-list {
         display: flex;
@@ -103,7 +104,7 @@ body {
     /* margin-left: 50px; */
     
     .featured-content {
-      height: 75vh;
+      height: 80vh;
       padding: 50px;
       
       .featured-title {
@@ -144,16 +145,6 @@ body {
     
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -245,7 +236,23 @@ body {
 
 
 @media only screen and (max-width: 940px){
-    .menu-container{
-        display: none;
-    }
-} 
+
+  .menu-container{
+    display: none;
+  }
+  .navbar .navbar-container{
+    padding: 0 10px;
+  }
+  .profile-text-container {
+    margin: 0 0;
+  }
+  .container .content-container .featured-content .featured-desc {
+    width: 20rem;
+    
+}
+.container .content-container .featured-content {
+  height: 90vh;
+  padding: 20px;
+}
+
+}

@@ -18,6 +18,7 @@
         
         public function getAllPostsUser($id){
             $data = $this->modelInstance->getAllPostsUser($id);
+            
             $this->loadView('user'.DS.'profile',$data); 
         }
    

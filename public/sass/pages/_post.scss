@@ -1,3 +1,4 @@
+@import '../abstracts/mixins';
 * {
     margin: 0;
   }
@@ -16,8 +17,9 @@
   }
   
   .navbar-container {
-    display: flex;
-    align-items: center;
+    // flex($direction, $justify, $align, $wrap)
+    @include flex(row, center, center, nowrap);
+    
     padding: 0 50px;
     height: 100%;
     color: white;
@@ -78,17 +80,21 @@
   .content-container {
     /* margin-left: 50px; */
   }
-  .info__user {
+  .info__userPost {
     padding: 3rem 0  0 3rem;
+     // flex($direction, $justify, $align, $wrap)
+     @include flex(row, flex-start, center, wrap);
     height: auto;
-    display: flex;
+   
 
-    justify-content:flex-start;
+   
  }
     .comment_info{
-      display: flex;
-      justify-content: space-between;
-      /* flex-direction: column; */
+     @include flex(row, space-between, center, nowrap);
+
+      
+      
+     
       width: auto;
       margin-left: 2rem;
       width: 30rem;
@@ -202,5 +208,27 @@ input{
   @media only screen and (max-width: 940px){
     .menu-container{
       display: none;
+    }
+    .profile-text-container {
+      margin: 0 0;
+    }
+    .info__userPost{
+      padding-left:1rem ;
+      padding-right:1rem ;
+      .info_film{
+        width: 100%;
+        .information{
+          .description{
+           
+            margin-left: 1rem;
+          }
+        }
+      }
+      
+      .comment_info{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        width: 100%;
+       }
     }
   }

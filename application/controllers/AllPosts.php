@@ -46,16 +46,12 @@ class AllPosts extends Controller
             
 
             if (empty($email_err) && empty($password_err)) {
-
-                // $dt = call function here
                 $dt = $this->modelInstance->login($data['email'], $data['password']);
                 if ($dt) {
-
                     $_SESSION['email'] = $data['email'];
                     $_SESSION['user_id'] = $dt['id_user'];
                     $_SESSION['fullname'] = $dt['Fullname'];
-                    print_r($_SESSION);
-                    
+                   
                     $this->redirect(URLROOT . '/AllPosts');
                 } else {
                     //password incorrect
@@ -72,4 +68,28 @@ class AllPosts extends Controller
             $this->loadView('user/login',[]);
         }
     }
+    public function register()
+    {
+        if (($_SERVER['REQUEST_METHOD'] == 'POST')) {
+            $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+            
+            $data = [
+                'fullname' => $_POST['fullname'],
+                'email' => $_POST['email'],
+                'password' => $_POST['password'],
+                'country' => $_POST['country'],
+                'gender' => $_POST['gender'],
+            ];
+            // 'Fullname','email','password','country','gender'
+                // die(print_r($data));
+                $dt = $this->modelInstance->register([$_POST['fullname'],$_POST['email'],$_POST['password'],$_POST['country'],$_POST['gender']]);
+               if($dt){
+                   echo "done";
+                   die();
+                }else{
+                    echo "failed***************************";
+                    die();
+               }
+         }
+        } 
 }

@@ -22,7 +22,9 @@
     <div class="navbar">
         <div class="navbar-container">
             <div class="logo-container">
-                <h1 class="logo">Cine Watch</h1>
+                <a style="text-decoration: none ;color:red;" href="http://127.0.0.1/breif_5/AllPosts">
+                    <h1 class="logo">Cine Watch</h1>
+                </a>
             </div>
             <div class="menu-container">
                 <ul class="menu-list">

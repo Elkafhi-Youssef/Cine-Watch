@@ -12,7 +12,7 @@
                     <h3 class="gender"><?= $data[0]['gender'];?></h3>
                     <h3 class="age">22 years</h3>
                </div>
-               <div class="detail_info">
+               <div class="detail_info detail_infoo ">
                 <h3 class="fullname">Number of  Post: 44</h3>
                 <button class="movie-list-item-butto btn_add">add Post</button>
            </div>

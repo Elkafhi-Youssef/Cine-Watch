@@ -36,7 +36,7 @@
                 $dt = $this->modelInstance->addPost([$data['title_film'] ,$data['country'],$data['description'],$data['genre'],$data['category'],$data['image'],$data['id_user']]);
                 if ($dt) {
                     $this->redirect(URLROOT .'/profileC/getAllPostsUser/'.$_SESSION['user_id']);
-                    echo "i'm here";
+                    
                 }else {
                         $this->redirect(URLROOT .'/profileC/getAllPostsUser/'.$_SESSION['user_id']);
                     }

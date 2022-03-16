@@ -302,20 +302,75 @@
           </a>
          </form>
       </div>
-</div>
+    </div>
+    <div class="container_form1 ">
+        <div class="login-box">
+            <div class="close">
+            <img src="<?= URLROOT."/public/img/x.svg";?>" alt="">
+            </div>
+            <h2>Sing up</h2>
+            <form action="<?= URLROOT."/AllPosts/register";?>" method="POST">
+            <div class="user-box">
+                    <input type="text" name="fullname" required="">
+                    <label>Fullname</label>
+                 </div>
+                <div class="user-box">
+                    <input type="text" name="email" required="">
+                    <label>Email</label>
+                 </div>
+                 <div class="user-box">
+                    <input type="text" name="country" required="">
+                    <label>country</label>
+                 </div>
+                 <div class="user-box">
+                 <select name="gender" id="">
+                        <option value="select your gender">select your gender</option>
+                        <option value="homme">Homme</option>
+                        <option value="femme">Femme</option>
+                    </select>
+                 </div> 
+
+                <div class="user-box">
+                    <input type="password" name="password" required="">
+                    <label>Password</label>
+                </div>
+           <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+           <button type="submit">Submit</button> 
+          </a>
+         </form>
+      </div>
+    </div>
 <script src="<?= URLROOT.DS.'public/js/app.js';?>"></script>
 <script>
-    const closeLogin = document.querySelector(".close");
+    const closeLogin = document.querySelectorAll(".close");
     const container_form = document.querySelector(".container_form");
+    const container_form1 = document.querySelector(".container_form1");
     const singin = document.querySelector(".singin");
+    const singup = document.querySelector(".singup");
+    singup.addEventListener('click',(e)=>{
+        console.log("here");
+        e.preventDefault();
+        container_form1.style.display = 'block';
+        container_form.style.display = 'none';
+    })
     singin.addEventListener('click',(e)=>{
         e.preventDefault();
         container_form.style.display = 'block';
+        container_form1.style.display = 'none';
     })
-    closeLogin.addEventListener('click',(e)=>{
+    console.log(closeLogin);
+    const arrayClose = closeLogin.forEach((btnclose)=>{
+        btnclose.addEventListener('click',(e)=>{
         e.preventDefault();
         container_form.style.display = 'none';
+        container_form1.style.display = 'none';
     })
+    })
+    
 </script>
 </body>
 
